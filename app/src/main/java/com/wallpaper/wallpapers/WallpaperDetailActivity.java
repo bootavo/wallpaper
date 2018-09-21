@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.varunest.sparkbutton.SparkButton;
@@ -93,6 +94,7 @@ public class WallpaperDetailActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_download:
+                Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
                 Bitmap bm=((BitmapDrawable)mPicture.getDrawable()).getBitmap();
                 saveImageFile(bm);
                 break;
