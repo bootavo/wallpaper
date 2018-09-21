@@ -55,13 +55,15 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="11dp"
             android:gravity="center"
-            android:text="ver perfil"
+            android:text="ver favoritos"
             android:textColor="@color/white"
             android:textSize="@dimen/content"
             android:textStyle="normal"
             android:background="@color/colorAccent"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
 
     </RelativeLayout>
 
