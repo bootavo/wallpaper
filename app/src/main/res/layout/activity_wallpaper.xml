@@ -14,9 +14,60 @@
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
+    <RelativeLayout
+        android:id="@+id/rl_profile"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_picture"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            app:civ_border_width="4dp"
+            app:civ_border_color="@color/white"
+            app:civ_border_overlay="false"
+            android:src="@drawable/ic_profile"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_below="@+id/iv_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="11dp"
+            android:gravity="center"
+            android:text="Bienvenido\nChristofer YR"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/subtitle"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"/>
+
+        <Button
+            android:id="@+id/tv_profile"
+            android:layout_below="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="11dp"
+            android:gravity="center"
+            android:text="ver perfil"
+            android:textColor="@color/white"
+            android:textSize="@dimen/content"
+            android:textStyle="normal"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listshow"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/rl_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fadeScrollbars="true"
@@ -31,5 +82,17 @@
         android:text="No Results"
         android:textSize="20sp"
         android:visibility="gone" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_mail"
+        app:fab_size="mini"
+        app:fab_label="Todos"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"/>
 
 </RelativeLayout>

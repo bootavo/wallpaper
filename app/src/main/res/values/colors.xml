@@ -7,4 +7,10 @@
     <color name="black">#000000</color>
     <color name="hint">#5b5757</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="heart_primary_color">#da4439</color>
+    <color name="heart_secondary_color">#8a098c</color>
+
+    <color name="star_primary_color">#dfcf1e</color>
+    <color name="star_secondary_color">#b38a33</color>
 </resources>

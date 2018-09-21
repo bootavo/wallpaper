@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         ButterKnife.bind(this);
 
-        mToolbar.setTitle("My title");
+        mToolbar.setTitle("Registrate");
         setSupportActionBar(mToolbar);
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,10 +12,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wallpaper.wallpapers.adapters.UserAdapter;
@@ -26,11 +30,14 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WallpapersActivity extends AppCompatActivity {
+public class WallpapersActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String TAG = WallpapersActivity.class.getSimpleName();
 
     @BindView(R.id.listshow) RecyclerView mRecyclerView;
+    @BindView(R.id.fab_mail) FloatingActionButton btnMail;
+    @BindView(R.id.tv_profile) Button btnProfile;
+
     private List<Wallpapers> mList;
     Toolbar mToolbar;
     UserAdapter mAdapter;
@@ -55,6 +62,9 @@ public class WallpapersActivity extends AppCompatActivity {
 
         mList = Wallpapers.getWallpapers();
         mRecyclerView = (RecyclerView) findViewById(R.id.listshow);
+
+        btnMail.setOnClickListener(this);
+        btnProfile.setOnClickListener(this);
     }
 
     public void nextActivity(){
@@ -93,4 +103,15 @@ public class WallpapersActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.fab_mail:
+                startActivity(new Intent(this, SendMailActivity.class));
+                break;
+            case R.id.tv_profile:
+                startActivity(new Intent(this, ProfileActivity.class));
+                break;
+        }
+    }
 }
